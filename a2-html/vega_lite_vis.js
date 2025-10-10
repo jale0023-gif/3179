@@ -1,6 +1,11 @@
-var vg_1 = "airports_in_au.json";
+var vg_1 = "gambling_map.vg.json";
 
-vegaEmbed("#map", vg_1).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-}).catch(console.error);
+vegaEmbed("#gambling_map", vg_1)
+  .then(function(result) {
+    // Access the Vega view instance here if needed
+  })
+  .catch(console.error);
+
+vegaEmbed("#line_chart", "gambling_expenditure_multiline.vg.json", {actions: false});
+
 
