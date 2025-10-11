@@ -1,0 +1,146 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Gambling Expenditure by Game Type in Australia (1999–2024)",
+    "anchor": "start",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+  "width": 700,
+  "height": 450,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jale0023-gif/3179/main/gambling_expenditure_by_game.csv"
+  },
+
+  "transform": [
+    {
+      "fold": [
+        "CASINO",
+        "GAMING MACHINES",
+        "INTERACTIVE GAMING",
+        "KENO",
+        "LOTTERIES",
+        "MINOR GAMING",
+        "WAGERING",
+        "TOTAL"
+      ],
+      "as": ["Game", "Expenditure_Million_AUD"]
+    },
+    {
+      "filter": "datum.Year >= 1999 && datum.Year <= 2024 && (game_filter == 'All' || datum.Game == game_filter)"
+    }
+  ],
+
+  "params": [
+    {
+      "name": "game_filter",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "CASINO",
+          "GAMING MACHINES",
+          "INTERACTIVE GAMING",
+          "KENO",
+          "LOTTERIES",
+          "MINOR GAMING",
+          "WAGERING",
+          "TOTAL"
+        ],
+        "labels": [
+          "All",
+          "Casinos",
+          "Gaming Machines",
+          "Interactive Gaming",
+          "Keno",
+          "Lotteries",
+          "Minor Gaming",
+          "Wagering",
+          "Total"
+        ],
+        "name": "Select Game: "
+      },
+      "value": "All"
+    }
+  ],
+
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 2},
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "quantitative",
+          "title": "Year",
+          "scale": {"domain": [1999, 2024]},
+          "axis": {"tickMinStep": 1, "format": "d"}
+        },
+        "y": {
+          "field": "Expenditure_Million_AUD",
+          "type": "quantitative",
+          "title": "Expenditure (Million AUD)"
+        },
+        "color": {
+          "field": "Game",
+          "type": "nominal",
+          "title": "Game Type",
+          "scale": {
+            "domain": [
+              "CASINO",
+              "GAMING MACHINES",
+              "INTERACTIVE GAMING",
+              "KENO",
+              "LOTTERIES",
+              "MINOR GAMING",
+              "WAGERING",
+              "TOTAL"
+            ],
+            "range": [
+              "#1f77b4",
+              "#ff7f0e",
+              "#2ca02c",
+              "#9467bd",
+              "#8c564b",
+              "#e377c2",
+              "#7f7f7f",
+              "#d62728"
+            ]
+          }
+        },
+        "tooltip": [
+          {"field": "Year", "title": "Year"},
+          {"field": "Game", "type": "nominal"},
+          {
+            "field": "Expenditure_Million_AUD",
+            "title": "Expenditure (Million AUD)",
+            "format": ",.1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "size": 50},
+      "encoding": {
+        "x": {"field": "Year", "type": "quantitative"},
+        "y": {"field": "Expenditure_Million_AUD", "type": "quantitative"},
+        "color": {"field": "Game", "type": "nominal"},
+        "tooltip": [
+          {"field": "Year", "title": "Year"},
+          {"field": "Game", "type": "nominal"},
+          {
+            "field": "Expenditure_Million_AUD",
+            "title": "Expenditure (Million AUD)",
+            "format": ",.1f"
+          }
+        ]
+      }
+    }
+  ],
+
+  "config": {
+    "legend": {"labelFont": "Lato", "titleFont": "Lato"},
+    "axis": {"labelFont": "Lato", "titleFont": "Lato"},
+    "view": {"stroke": "transparent"}
+  }
+}
+
