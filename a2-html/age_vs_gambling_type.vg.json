@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Gambling Preferences by Age Group in Australia"},
+  "width": 650,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/jale0023-gif/3179/refs/heads/main/age_vs_gambling_type.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "Lottery",
+        "Instant Scratch Tickets",
+        "EGMs",
+        "Race Betting",
+        "Sports Betting",
+        "Keno",
+        "Casino Table Games",
+        "Bingo",
+        "Private Betting",
+        "Poker"
+      ],
+      "as": ["Gambling Type", "Percentage"]
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Age Group", "type": "nominal", "title": "Age Group"},
+    "y": {"field": "Percentage", "type": "quantitative", "title": "Participation (%)"},
+    "color": {"field": "Gambling Type", "type": "nominal", "title": "Gambling Type"},
+    "tooltip": [
+      {"field": "Age Group"},
+      {"field": "Gambling Type"},
+      {"field": "Percentage", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {"labelFont": "Lato", "titleFont": "Lato"},
+    "legend": {"labelFont": "Lato", "titleFont": "Lato"}
+  }
+}

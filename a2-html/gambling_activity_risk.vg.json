@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Sankey diagram showing the flow of gambling activities into risk groups.",
+  "width": 700,
+  "height": 500,
+
+  "data": [
+    {
+      "name": "links",
+      "url": "https://raw.githubusercontent.com/jale0023-gif/3179/refs/heads/main/gambling_activity_risk.csv",
+      "format": {"type": "csv"},
+      "transform": [
+        {"type": "formula", "as": "value", "expr": "toNumber(datum.Value)"}
+      ]
+    }
+  ],
+
+  "transform": [
+    {
+      "type": "sankey",
+      "source": "Source",
+      "target": "Target",
+      "value": "value",
+      "nodeWidth": 20,
+      "nodePadding": 15,
+      "as": ["links", "nodes"]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "links", "fields": ["Source", "Target"]},
+      "range": ["#8BC34A", "#FFC107", "#FF9800", "#F44336", "#2196F3", "#9C27B0"]
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "path",
+      "from": {"data": "links"},
+      "encode": {
+        "enter": {
+          "path": {"field": "path"},
+          "stroke": {"scale": "color", "field": "Source"},
+          "strokeOpacity": {"value": 0.5}
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {"data": "nodes"},
+      "encode": {
+        "enter": {
+          "x": {"field": "x0"},
+          "x2": {"field": "x1"},
+          "y": {"field": "y0"},
+          "y2": {"field": "y1"},
+          "fill": {"scale": "color", "field": "name"},
+          "stroke": {"value": "#fff"},
+          "strokeWidth": {"value": 0.5},
+          "tooltip": {"signal": "datum.name"}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {"data": "nodes"},
+      "encode": {
+        "enter": {
+          "x": {"signal": "datum.x0 < 350 ? datum.x1 + 6 : datum.x0 - 6"},
+          "y": {"signal": "(datum.y0 + datum.y1)/2"},
+          "align": {"signal": "datum.x0 < 350 ? 'left' : 'right'"},
+          "baseline": {"value": "middle"},
+          "text": {"field": "name"},
+          "fontSize": {"value": 11},
+          "fill": {"value": "black"}
+        }
+      }
+    }
+  ]
+}

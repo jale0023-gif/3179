@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gambling in Australia</title>
+
+  <!-- Load Vega libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.30.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Link your JS file -->
+  <script src="vega_lite_vis.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+      background-color: #f7f7f7;
+    }
+    h1 {
+      color: #222;
+      font-size: 24px;
+    }
+    #gambling_map {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Gambling in Australia</h1>
+  <div id="gambling_map"></div>
+
+  <h2>Gambling Expenditure Trends by Game Type</h2>
+  <div id="line_chart"></div>
+
+  <h2>Global Gambling Revenue Comparison</h2>
+  <div id="global_gambling_chart" class="chart"></div>
+
+  <h2>Gambling Preferences by Age Group</h2>
+  <div id="age_gambling_chart"></div>
+
+  <h2>Flow of Gambling Activity Expenditure by Risk Group</h2>
+  <div id="sankey_chart" class="chart"></div>
+  
+
+</body>
+</html>
+
+
+
+

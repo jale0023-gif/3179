@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Gambling Revenue by Country (USD Billions)",
+    "anchor": "start",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+  "width": 600,
+  "height": 400,
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/jale0023-gif/3179/refs/heads/main/global_gambling_revenue.csv",
+    "format": { "type": "csv" }
+  },
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3,
+    "color": "#9ecae1"
+  },
+
+  "encoding": {
+    "y": {
+      "field": "Country",
+      "type": "nominal",
+      "sort": "-x",
+      "title": null
+    },
+    "x": {
+      "field": "Revenue_Billion_USD",
+      "type": "quantitative",
+      "title": "Revenue (USD Billions)"
+    },
+    "tooltip": [
+      { "field": "Country", "type": "nominal" },
+      {
+        "field": "Revenue_Billion_USD",
+        "type": "quantitative",
+        "title": "Gambling Revenue (USD Billions)",
+        "format": ",.2f"
+      }
+    ]
+  },
+
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+    "view": { "stroke": "transparent" },
+    "legend": { "disable": true }
+  }
+}
