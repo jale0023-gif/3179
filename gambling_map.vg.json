@@ -1,0 +1,115 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Gambling Loss per Adult by Australian State and Territory",
+    "anchor": "start",
+    "fontSize": 18,
+    "fontWeight": "bold"
+  },
+  "width": 700,
+  "height": 500,
+
+  "projection": {
+    "type": "mercator",
+    "center": [134, -25],
+    "scale": 600  
+  },
+
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jale0023-gif/3179/main/ne_50m_ocean.json",
+        "format": { "type": "topojson", "feature": "ne_50m_ocean" }
+      },
+      "mark": { "type": "geoshape", "fill": "#cfe9f7" }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jale0023-gif/3179/main/ne_50m_graticules_30.json",
+        "format": { "type": "topojson", "feature": "ne_50m_graticules_30" }
+      },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#d3d3d3",
+        "strokeWidth": 0.5
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jale0023-gif/3179/main/ne_50m_admin_1_states_provinces.json",
+        "format": { "type": "topojson", "feature": "ne_50m_admin_1_states_provinces" }
+      },
+      "transform": [
+        { "filter": "datum.properties.admin == 'Australia'" }, 
+        { "filter": "datum.properties.name != 'Jervis Bay Territory'" },
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/jale0023-gif/3179/main/gambling_data.csv"
+            },
+            "key": "State",
+            "fields": ["Losses_per_Adult"]
+          }
+        }
+      ],
+      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.6 },
+      "encoding": {
+        "color": {
+          "field": "Losses_per_Adult",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [800, 1000, 1200, 1400, 1600],
+            "range": ["#fee5d9", "#fcbba1", "#fb6a4a", "#de2d26", "#a50f15"]
+          },
+          "legend": {
+            "title": "Loss per Adult (AUD)",
+            "orient": "right",
+            "direction": "vertical",
+            "offset": 20,
+            "titleAnchor": "start"
+          }
+        },
+        "tooltip": [
+          { "field": "properties.name", "title": "State/Territory" },
+          {
+            "field": "Losses_per_Adult",
+            "title": "Loss per Adult (AUD)",
+            "format": ".0f"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jale0023-gif/3179/main/ne_50m_admin_1_states_provinces.json",
+        "format": { "type": "topojson", "feature": "ne_50m_admin_1_states_provinces" }
+      },
+      "transform": [
+        { "filter": "datum.properties.admin == 'Australia'" },
+        { "filter": "datum.properties.name != 'Jervis Bay Territory'" }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": "bold",
+        "fill": "black",
+        "align": "center"
+      },
+      "encoding": {
+        "text": { "field": "properties.name" },
+        "longitude": { "field": "properties.longitude" },
+        "latitude": { "field": "properties.latitude" }
+      }
+    }
+  ]
+}
+
+
+
+
+
+
+
+
