@@ -1,41 +1,41 @@
-Source,Target,Value
-Lottery,Non-Problem,84.4
-Lottery,Low-Risk,54.3
-Lottery,Moderate-Risk,37.1
+Activity,RiskGroup,Percentage
+Lottery,Non-problem,84.4
+Lottery,Low-risk,54.3
+Lottery,Moderate-risk,37.1
 Lottery,Problem,25.2
-Instant Scratch Tickets,Non-Problem,44.3
-Instant Scratch Tickets,Low-Risk,29.0
-Instant Scratch Tickets,Moderate-Risk,13.4
-Instant Scratch Tickets,Problem,16.1
-EGMs (Pokies),Non-Problem,59.8
-EGMs (Pokies),Low-Risk,61.4
-EGMs (Pokies),Moderate-Risk,59.7
-EGMs (Pokies),Problem,61.4
-Race Betting,Non-Problem,54.8
-Race Betting,Low-Risk,50.5
-Race Betting,Moderate-Risk,47.3
-Race Betting,Problem,46.9
-Sports Betting,Non-Problem,48.5
-Sports Betting,Low-Risk,46.2
-Sports Betting,Moderate-Risk,32.2
-Sports Betting,Problem,40.2
-Keno,Non-Problem,38.5
-Keno,Low-Risk,28.2
-Keno,Moderate-Risk,16.2
+Instant scratch tickets,Non-problem,44.3
+Instant scratch tickets,Low-risk,29.0
+Instant scratch tickets,Moderate-risk,13.4
+Instant scratch tickets,Problem,16.1
+EGMs,Non-problem,59.8
+EGMs,Low-risk,61.4
+EGMs,Moderate-risk,59.7
+EGMs,Problem,61.4
+Race betting,Non-problem,54.8
+Race betting,Low-risk,50.5
+Race betting,Moderate-risk,47.3
+Race betting,Problem,46.9
+Sports betting,Non-problem,48.5
+Sports betting,Low-risk,46.2
+Sports betting,Moderate-risk,32.2
+Sports betting,Problem,40.2
+Keno,Non-problem,38.5
+Keno,Low-risk,28.2
+Keno,Moderate-risk,16.2
 Keno,Problem,11.9
-Casino Table Games,Non-Problem,62.7
-Casino Table Games,Low-Risk,53.7
-Casino Table Games,Moderate-Risk,35.9
-Casino Table Games,Problem,37.3
-Bingo,Non-Problem,63.6
-Bingo,Low-Risk,42.1
-Bingo,Moderate-Risk,35.3
-Bingo,Problem,20.0
-Private Betting,Non-Problem,56.6
-Private Betting,Low-Risk,27.0
-Private Betting,Moderate-Risk,23.2
-Private Betting,Problem,23.0
-Poker,Non-Problem,59.8
-Poker,Low-Risk,48.8
-Poker,Moderate-Risk,31.0
+Casino table games,Non-problem,62.7
+Casino table games,Low-risk,53.7
+Casino table games,Moderate-risk,35.9
+Casino table games,Problem,37.3
+Bingo,Non-problem,63.6
+Bingo,Low-risk,42.1
+Bingo,Moderate-risk,35.3
+Bingo,Problem,0
+Private betting,Non-problem,56.6
+Private betting,Low-risk,27.0
+Private betting,Moderate-risk,23.2
+Private betting,Problem,23.0
+Poker,Non-problem,59.8
+Poker,Low-risk,48.8
+Poker,Moderate-risk,31.0
 Poker,Problem,29.2
