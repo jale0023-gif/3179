@@ -22,5 +22,7 @@ vegaEmbed("#age_gambling_chart", "age_vs_gambling_type.vg.json", {actions: false
   .then(function(result) {})
   .catch(console.error);
 
-vegaEmbed("#sankey_chart", "gambling_activity_risk.vg.json", {actions: false})
+vegaEmbed("#heatmap_chart", "gambling_activity_risk.vg.json", { actions: false })
   .catch(console.error);
+
+vegaEmbed("#sports_lollipop", "gambling_sports_type_lollipop.vg.json", { actions: false });
