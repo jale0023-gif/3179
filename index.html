@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gambling in Australia</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="vega_lite_vis.js" defer></script>
+</head>
+
+<body>
+  <main class="content-wrapper">
+    <header class="hero">
+      <h1>Gambling in Australia</h1>
+      <p><em>Exploring Australia's gambling behaviour, financial impact, and global position through data-driven insights.</em></p>
+    </header>
+
+    <section class="intro">
+      <h2>Introduction</h2>
+      <p>
+        Gambling is deeply rooted in Australian culture, spanning casinos,  
+        lotteries, racing, and online platforms. Despite its appeal, it has  
+        notable <strong>social and financial impacts</strong> nationwide.
+      </p>
+
+      <p>
+        Australia ranks among the <strong>top gambling spenders</strong> per capita  
+        globally, with billions lost each year across states and game types.
+      </p>
+
+      <p>
+        This visualisation explores <strong>gambling behaviour, spending patterns,</strong>  
+        and <strong>risk exposure</strong> to uncover how access, preference,  
+        and policy shape Australia's gambling landscape.
+      </p>
+    </section>
+
+    <section>
+      <h2>Gambling Loss per Adult by Australian State and Territory</h2>
+      <div id="gambling_map"></div>
+
+      <div class="story-text">
+        <p>
+          Gambling losses across Australia reveal clear regional contrasts,  
+          shaped by <strong>population density, machine access,</strong> and  
+          <strong>state-level regulation</strong>. The variation provides useful  
+          insight into how local factors influence gambling behaviour.
+        </p>
+
+        <p>
+          Average losses vary widely across Australia's states and territories.  
+          <strong>New South Wales</strong> leads with around <strong>$1,550 per adult</strong> annually.  
+          <strong>Queensland</strong> and <strong>Victoria</strong> follow with roughly  
+          <strong>$1,150</strong> and <strong>$1,050</strong> respectively.
+        </p>
+
+        <p>
+          <strong>Western Australia</strong> records the lowest at about <strong>$670 per adult</strong>.  
+          <strong>Tasmania</strong> and <strong>South Australia</strong> fall below the national average.  
+          The <strong>Northern Territory</strong> shows elevated per-capita losses despite small population.
+        </p>
+
+        <p>
+          The pattern highlights that greater gambling access and higher population density link  
+          with higher losses per adult across regions.
+        </p>
+      </div>
+
+
+    </section>
+
+    <section>
+      <h2>Expenditure Trends by Game Type</h2>
+      <div id="line_chart"></div>
+
+      <div class="story-text">
+        <p>
+          Gambling expenditure in Australia has evolved significantly over  
+          the past two decades, reflecting <strong>economic shifts</strong> and  
+          <strong>technological change</strong>. The long-term trend offers insight  
+          into how <strong>digital access</strong> continues to reshape gambling behaviour.
+        </p>
+        
+        <p>
+          Gambling expenditure in Australia has <strong>risen sharply since 1999</strong>, 
+          reaching over <strong>$32 billion in 2024</strong>. 
+          <strong>Gaming machines</strong> dominate spending, showing strong post-2020 recovery.
+        </p>
+
+        <p>
+          <strong>Wagering</strong> records the fastest growth, boosted by <strong>online betting platforms</strong> 
+          and <strong>mobile access</strong>. 
+          <strong>Casinos</strong> and <strong>lotteries</strong> remain stable, while <strong>minor gaming</strong> declines steadily.
+        </p>
+
+        <p>
+          Overall, the data shows a <strong>shift toward digital gambling</strong>, 
+          with online activity reshaping <strong>how Australians gamble and spend</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Global Gambling Revenue Comparison</h2>
+      <div id="global_gambling_chart"></div>
+
+      <div class="story-text">
+
+        <p>
+          Gambling revenue varies widely across the world, shaped by  
+          <strong>market size, culture,</strong> and <strong>regulation</strong>.  
+          Comparing these figures highlights how economic and social  
+          factors influence national gambling industries.
+        </p>
+
+        <p>
+          The <strong>United States</strong> leads the world, generating over  
+          <strong>$67 billion USD</strong> in annual gambling revenue —  
+          far exceeding all other countries.
+        </p>
+
+        <p>
+          The <strong>United Kingdom</strong>, <strong>France</strong>, and  
+          <strong>Canada</strong> follow with earnings between  
+          <strong>$12-18 billion USD</strong> each.
+        </p>
+
+        <p>
+          <strong>Australia</strong> ranks mid-level globally at about  
+          <strong>$10 billion USD</strong>, reflecting high per-capita spending  
+          despite its smaller population.
+        </p>
+
+        <p>
+          These figures reveal that gambling remains a  
+          <strong>major global economy</strong>, driven by accessibility,  
+          technology, and evolving regulation.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Gambling Preferences by Age Group</h2>
+      <div id="age_gambling_chart"></div>
+      <div class="story-text">
+        <p>
+          Gambling habits in Australia differ sharply by age,  
+          shaped by <strong>technology, lifestyle, and income levels</strong>.  
+          Younger adults are drawn to online and fast-paced formats,  
+          while older groups prefer traditional, low-risk games.
+        </p>
+
+        <p>
+          Gambling participation peaks among <strong>30-49 year olds</strong>,  
+          who show the broadest engagement across all gambling types.
+        </p>
+
+        <p>
+          <strong>18-29 year olds</strong> lean toward <strong>sports betting</strong>  
+          and <strong>private betting</strong>, reflecting a preference for  
+          fast, interactive forms of gambling.
+        </p>
+
+        <p>
+          <strong>50-64 year olds</strong> maintain high involvement in  
+          <strong>lotteries</strong> and <strong>gaming machines (EGMs)</strong>,  
+          while the <strong>65+ group</strong> shows a decline across all types.
+        </p>
+
+        <p>
+          The overall trend highlights that gambling intensity is  
+          strongest in mid-life, when financial capacity and risk appetite  
+          are highest.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Gambling Activity vs Risk Group</h2>
+      <div id="heatmap_chart"></div>
+      <div class="story-text">
+        <p>
+          Gambling activity differs notably between risk groups,  
+          showing how spending patterns shift from casual play  
+          to high-intensity gambling. This relationship offers  
+          insight into how <strong>risk level influences behaviour</strong>.
+        </p>
+
+        <p>
+          <strong>Non-problem gamblers</strong> show the highest participation in  
+          <strong>lotteries (84%)</strong> and <strong>gaming machines (60%)</strong>,  
+          reflecting controlled, recreational play.
+        </p>
+
+        <p>
+          <strong>Low-risk and moderate-risk groups</strong> engage moderately across  
+          most activities, especially in <strong>casino games</strong> and  
+          <strong>race betting</strong>.
+        </p>
+
+        <p>
+          <strong>Problem gamblers</strong> spend heavily on  
+          <strong>gaming machines (61%)</strong> and  
+          <strong>sports betting (47%)</strong>, highlighting a shift toward  
+          high-intensity forms of gambling.
+        </p>
+
+        <p>
+          The heatmap reveals that as risk severity rises,  
+          gambling behaviour becomes more concentrated in  
+          faster, higher-stakes activities.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sports Betting by Type</h2>
+      <div id="sports_lollipop"></div>
+      <div class="story-text">
+
+        <p>
+          Sports betting has surged in popularity, especially among  
+          <strong>young to middle-aged Australians</strong> who are highly active  
+          on <strong>digital and mobile platforms</strong>.
+        </p>
+
+        <p>
+          <strong>AFL</strong> dominates with about <strong>58% participation</strong>,  
+          followed by <strong>NRL (49%)</strong>,both reflecting Australia's  
+          deep-rooted sporting culture.
+        </p>
+
+        <p>
+          Other major betting choices include <strong>soccer (28%)</strong>,  
+          <strong>cricket (27%)</strong>, and <strong>basketball (25%)</strong>,  
+          supported by global tournaments and online accessibility.
+        </p>
+
+        <p>
+          The data highlights how <strong>digital wagering</strong> and  
+          <strong>real-time sports engagement</strong> continue to drive  
+          gambling growth among younger demographics.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <h2>References</h2>
+      <p>
+        https://www.qgso.qld.gov.au/statistics/theme/society/gambling/australian-gambling-statistics<br><br>
+        https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release#data-downloads<br><br>
+        https://gamblingindustrynews.com/global-gambling-statistics/<br><br>
+        https://aifs.gov.au/agrc/sites/default/files/publication-documents/rr-gambling_activity_in_australia_0.pdf<br><br>
+        https://aifs.gov.au/sites/default/files/2023-10/AGRC_2_Regular-online-betting-2022.pdf
+      </p>
+    </footer>
+
+
+  </main>
+</body>
+</html>
+
+
+
+
+
